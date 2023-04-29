@@ -12,10 +12,10 @@ export class ProductComponent implements OnInit {
   apiUrl = 'https://localhost:44302/api/products/getall';
   products: Product[] = [];
 
-  productResponseModel:ProductResponseModel={
-    data:this.products,
-    message:"",
-    success:true
+  productResponseModel: ProductResponseModel = {
+    data: this.products,
+    message: '',
+    success: true,
   };
 
   constructor(private httpClient: HttpClient) {}
@@ -28,7 +28,7 @@ export class ProductComponent implements OnInit {
     this.httpClient
       .get<ProductResponseModel>(this.apiUrl)
       .subscribe((response) => {
-        this.products=response.data
+        this.products = response.data;
       });
   }
 }
